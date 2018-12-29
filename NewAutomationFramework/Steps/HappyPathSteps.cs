@@ -65,7 +65,7 @@ namespace NewAutomationFramework.Steps
         [Given(@"I am on '(.*)' page")]
         public void GivenIAmOnPage(string PageName)
         {
-            Driver = new ChromeDriver(@"C:\Users\JK-WIN\source\repos\NewAutomationFramework\packages\Selenium.WebDriver.ChromeDriver.2.45.0\driver\win32");
+            Driver = (IWebDriver)ScenarioContext.Current["driver"];
             switch (PageName.ToLower())
             {
                 case "yatra":
@@ -80,8 +80,7 @@ namespace NewAutomationFramework.Steps
                 default:
                     break;
             }
-            Driver.Manage().Window.Maximize();
-            ScenarioContext.Current["Driver"] = Driver;
+            
         }
 
         [When(@"I select '(.*)' as departure city")]
