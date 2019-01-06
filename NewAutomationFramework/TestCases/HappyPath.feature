@@ -36,9 +36,9 @@ Then I should see Pre-text condition overlay
 When I 'accept' condition by clicking accept and continue button
 Then I should see get a health quote page
 When I enter personal details as '<FName>','<LName>','<Title>','<DOB>','<Gendar>','<Occupation>','<Smoke>'
-#And  I enter contact details as '<PostCode>','<PhoneNum>','<Email>','<QuoteDetails>','<StartDate>'
-#And  I select '2' Additional family details
+And  I enter contact details as '<PostCode>','<PhoneNum>','<Email>','<QuoteDetails>','<StartDate>'
+And  I select Additional family details as '<FamilyMembers>','<Relationship>','<MemberDOB>'
 #And  I click on choose your cover button
 Examples: 
-| PageName | FName | LName | Title | DOB        | Gendar | Occupation | Smoke | PostCode | PhoneNum    | Email     | QuoteDetails | StartDate |
-| Bupa     | Javed | Khan  | Mr    | 02/11/1986 | Male    | Engineer   | No    | TW18DZ   | 09876543210 | jk@jk.com | Email        | 2         |
+| PageName | FName | LName | Title | DOB        | Gendar | Occupation | Smoke | PostCode | PhoneNum    | Email     | QuoteDetails | StartDate | FamilyMembers | Relationship          | MemberDOB      |
+| Bupa     | Javed | Khan  | Mr    | 02/11/1986 | Male   | Engineer   | No    | TW18DZ   | 09876543210 | jk@jk.com | Email        | 2         | 3             | Daughter,Son,Wife     | 20,18,45       |

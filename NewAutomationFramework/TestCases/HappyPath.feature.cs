@@ -182,7 +182,24 @@ this.BookTicketsOnYatra_Com("Yatra", "Indore", "Mumbai", "06-01-2019", "08-Jan-2
 #line hidden
         }
         
-        public virtual void GetAQuoteBUPA(string pageName, string fName, string lName, string title, string dOB, string gendar, string occupation, string smoke, string postCode, string phoneNum, string email, string quoteDetails, string startDate, string[] exampleTags)
+        public virtual void GetAQuoteBUPA(
+                    string pageName, 
+                    string fName, 
+                    string lName, 
+                    string title, 
+                    string dOB, 
+                    string gendar, 
+                    string occupation, 
+                    string smoke, 
+                    string postCode, 
+                    string phoneNum, 
+                    string email, 
+                    string quoteDetails, 
+                    string startDate, 
+                    string familyMembers, 
+                    string relationship, 
+                    string memberDOB, 
+                    string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get A quote BUPA", null, exampleTags);
 #line 30
@@ -204,6 +221,10 @@ testRunner.When("I \'accept\' condition by clicking accept and continue button",
 testRunner.Then("I should see get a health quote page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 38
 testRunner.When(string.Format("I enter personal details as \'{0}\',\'{1}\',\'{2}\',\'{3}\',\'{4}\',\'{5}\',\'{6}\'", fName, lName, title, dOB, gendar, occupation, smoke), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 39
+testRunner.And(string.Format("I enter contact details as \'{0}\',\'{1}\',\'{2}\',\'{3}\',\'{4}\'", postCode, phoneNum, email, quoteDetails, startDate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+testRunner.And(string.Format("I select Additional family details as \'{0}\',\'{1}\',\'{2}\'", familyMembers, relationship, memberDOB), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -225,10 +246,13 @@ testRunner.When(string.Format("I enter personal details as \'{0}\',\'{1}\',\'{2}
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Email", "jk@jk.com")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:QuoteDetails", "Email")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:StartDate", "2")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FamilyMembers", "3")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Relationship", "Daughter,Son,Wife")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:MemberDOB", "20,18,45")]
         public virtual void GetAQuoteBUPA_Bupa()
         {
 #line 30
-this.GetAQuoteBUPA("Bupa", "Javed", "Khan", "Mr", "02/11/1986", "Male", "Engineer", "No", "TW18DZ", "09876543210", "jk@jk.com", "Email", "2", ((string[])(null)));
+this.GetAQuoteBUPA("Bupa", "Javed", "Khan", "Mr", "02/11/1986", "Male", "Engineer", "No", "TW18DZ", "09876543210", "jk@jk.com", "Email", "2", "3", "Daughter,Son,Wife", "20,18,45", ((string[])(null)));
 #line hidden
         }
     }

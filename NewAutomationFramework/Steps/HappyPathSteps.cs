@@ -241,16 +241,80 @@ namespace NewAutomationFramework.Steps
         }
 
         [When(@"I enter contact details as '(.*)','(.*)','(.*)','(.*)','(.*)'")]
-        public void WhenIEnterContactDetailsAs(string p0, Decimal p1, string p2, string p3, int p4)
+        public void WhenIEnterContactDetailsAs(string Postcode, int PhoneNum, string Email, string QuoteDetails, int Startdate)
         {
-            ScenarioContext.Current.Pending();
+           IWebElement AreaPostCode = Driver.FindElement(By.XPath("//input[@name='ContactDetails.Postcode']"));
+            AreaPostCode.SendKeys(Postcode);
+
+            IWebElement ContactNumber = Driver.FindElement(By.XPath("//input[@id='Telephone']"));
+            ContactNumber.SendKeys(PhoneNum.ToString());
+
+            IWebElement EmailAddress = Driver.FindElement(By.XPath("//input[@id='EmailAddress']"));
+            EmailAddress.SendKeys(Email);
+
+            IWebElement quoteSelection = Driver.FindElement(By.XPath("//span[@data-id='QuotePrefernce']"));
+            quoteSelection.SendKeys(QuoteDetails);
+
+            IWebElement PolicyStartDate = Driver.FindElement(By.XPath("//input[@id='PolicyStartDate']"));
+            PolicyStartDate.Click();
+
+            DateTime Effectivedate = DateTime.Today.AddDays(Startdate);
+
+            IWebElement sdate = Driver.FindElement(By.XPath("//a[@class='ui-state-default'][contains(text(),'"+ Effectivedate.Day+"')]"));
+            sdate.Click();
+
+            IWebElement btnContinue = Driver.FindElement(By.XPath("//div[@class='btn left-button BG_blue FG_white href-analytics']"));
+            btnContinue.Click();
+
         }
 
-        [When(@"I select '(.*)' Additional family details")]
-        public void WhenISelectAdditionalFamilyDetails(int p0)
+        [When(@"I select Additional family details as '(.*)','(.*)','(.*)'")]
+        public void WhenISelectAdditionalFamilyDetailsAs(string FamilyMembers, string Relationship, string MemberDOB)
         {
-            ScenarioContext.Current.Pending();
+            IWebElement btnfamily = Driver.FindElement(By.XPath("//a[@div = 'familySelectionBtn')][contains(text(),'" + FamilyMembers + "')]"));
+            btnfamily.Click();
+
+            IWebElement Relation = Driver.FindElement(By.XPath("//select[@class=show-tooltip member-relationship"));
+            SelectElement FamilyRelation = new SelectElement(Relation);
+
+            List<string> DOBofMember = MemberDOB.Split('/').ToList();
+
+            DateTime mdate = DateTime.Now.AddYears(Convert.ToInt32("-"+ DOBofMember[0]));
+
+
+            IWebElement mDate = Driver.FindElement(By.XPath("//select[@id='dependenthide_DD111'][contains(text(),'" + mdate.Day + "')]"));
+            mDate.Click();
+
+            IWebElement mMonth = Driver.FindElement(By.XPath("//select[@id='dependenthide_MM111'][contains(@value,'" + mdate.Month + "')]"));
+            mMonth.Click();
+
+            IWebElement mYear = Driver.FindElement(By.XPath("//select[@id='partnerhide_YY111'][contains(@value,'" + mdate.Year + "')]"));
+            mYear.Click();
+
+            try
+            {
+                IWebElement smokevalidation = Driver.FindElement(By.XPath("//span[@data-id='DoYouSomke']"));
+                smokevalidation.Click();
+
+            }
+            catch (Exception)
+            {
+
+              
+            }
+
+
+               
+
+
+
+
+
+
+
         }
+
+     
 
         [When(@"I click on choose your cover button")]
         public void WhenIClickOnChooseYourCoverButton()

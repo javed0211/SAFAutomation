@@ -21,3 +21,4 @@ C:\Users\JK-WIN\source\repos\NewAutomationFramework\NewAutomationFramework\obj\D
 C:\Users\JK-WIN\source\repos\NewAutomationFramework\NewAutomationFramework\obj\Debug\NewAutomationFramework.csproj.CopyComplete
 C:\Users\JK-WIN\source\repos\NewAutomationFramework\NewAutomationFramework\obj\Debug\NewAutomationFramework.dll
 C:\Users\JK-WIN\source\repos\NewAutomationFramework\NewAutomationFramework\obj\Debug\NewAutomationFramework.pdb
+C:\Users\JK-WIN\source\repos\NewAutomationFramework\NewAutomationFramework\obj\Debug\NewAutomationFramework.csprojAssemblyReference.cache
