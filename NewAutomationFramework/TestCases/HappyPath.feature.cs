@@ -199,6 +199,7 @@ this.BookTicketsOnYatra_Com("Yatra", "Indore", "Mumbai", "06-01-2019", "08-Jan-2
                     string familyMembers, 
                     string relationship, 
                     string memberDOB, 
+                    string browser, 
                     string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get A quote BUPA", null, exampleTags);
@@ -206,7 +207,7 @@ this.BookTicketsOnYatra_Com("Yatra", "Indore", "Mumbai", "06-01-2019", "08-Jan-2
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 31
-testRunner.Given(string.Format("I am on \'{0}\' page", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.Given(string.Format("I am on \'{0}\' page using \'{1}\'", pageName, browser), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 32
 testRunner.When("I click on Get a quote button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33
@@ -249,10 +250,11 @@ testRunner.And(string.Format("I select Additional family details as \'{0}\',\'{1
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:FamilyMembers", "3")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Relationship", "Daughter,Son,Wife")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:MemberDOB", "20,18,45")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:browser", "chrome")]
         public virtual void GetAQuoteBUPA_Bupa()
         {
 #line 30
-this.GetAQuoteBUPA("Bupa", "Javed", "Khan", "Mr", "02/11/1986", "Male", "Engineer", "No", "TW18DZ", "09876543210", "jk@jk.com", "Email", "2", "3", "Daughter,Son,Wife", "20,18,45", ((string[])(null)));
+this.GetAQuoteBUPA("Bupa", "Javed", "Khan", "Mr", "02/11/1986", "Male", "Engineer", "No", "TW18DZ", "09876543210", "jk@jk.com", "Email", "2", "3", "Daughter,Son,Wife", "20,18,45", "chrome", ((string[])(null)));
 #line hidden
         }
     }

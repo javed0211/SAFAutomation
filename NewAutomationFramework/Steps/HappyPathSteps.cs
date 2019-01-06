@@ -62,26 +62,7 @@ namespace NewAutomationFramework.Steps
                 Console.WriteLine("Page is not displayed");
         }
 
-        [Given(@"I am on '(.*)' page")]
-        public void GivenIAmOnPage(string PageName)
-        {
-            Driver = (IWebDriver)ScenarioContext.Current["driver"];
-            switch (PageName.ToLower())
-            {
-                case "yatra":
-                    Driver.Url = "https://yatra.com";
-                    break;
-                case "amazon":
-                    Driver.Url = "https://amazon.com";
-                    break;
-                case "bupa":
-                    Driver.Url = "https://bupa.co.uk";
-                    break;
-                default:
-                    break;
-            }
-            
-        }
+        
 
         [When(@"I select '(.*)' as departure city")]
         public void WhenISelectDepartureCity(string CityName)
@@ -146,22 +127,7 @@ namespace NewAutomationFramework.Steps
 
         }
 
-        [When(@"I click on Get a quote button")]
-        public void WhenIClickOnGetAQuoteButton()
-        {
-            IWebElement btngetQuote = Driver.FindElement(By.XPath("//div[@class='nudge']//a[@class=' btn-white-box qte_btnInsideNudge btn_quote ']"));
-            btngetQuote.Click();
-        }
-
-        [Then(@"I should see cover option overlay")]
-        public void ThenIShouldSeeCoverOptionOverlay()
-        {
-            IWebElement lbloverlay = Driver.FindElement(By.XPath("//div[@class='overlay-quote-box bg-cyan']"));
-            if (lbloverlay.Displayed)
-                Console.WriteLine("Overlay is displayed");
-            else
-                Console.WriteLine("Overlay is not displayed");
-        }
+        
 
         [When(@"I select '(.*)'")]
         public void WhenISelect(string Insurance)

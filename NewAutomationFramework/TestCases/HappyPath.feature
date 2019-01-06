@@ -28,7 +28,7 @@ Examples:
 
 
 Scenario Outline: Get A quote BUPA
-Given I am on '<PageName>' page
+Given I am on '<PageName>' page using '<browser>'
 When I click on Get a quote button
 Then I should see cover option overlay
 When I select 'Health insurance'
@@ -40,5 +40,5 @@ And  I enter contact details as '<PostCode>','<PhoneNum>','<Email>','<QuoteDetai
 And  I select Additional family details as '<FamilyMembers>','<Relationship>','<MemberDOB>'
 #And  I click on choose your cover button
 Examples: 
-| PageName | FName | LName | Title | DOB        | Gendar | Occupation | Smoke | PostCode | PhoneNum    | Email     | QuoteDetails | StartDate | FamilyMembers | Relationship          | MemberDOB      |
-| Bupa     | Javed | Khan  | Mr    | 02/11/1986 | Male   | Engineer   | No    | TW18DZ   | 09876543210 | jk@jk.com | Email        | 2         | 3             | Daughter,Son,Wife     | 20,18,45       |
+| PageName | FName | LName | Title | DOB        | Gendar | Occupation | Smoke | PostCode | PhoneNum    | Email     | QuoteDetails | StartDate | FamilyMembers | Relationship      | MemberDOB | browser |
+| Bupa     | Javed | Khan  | Mr    | 02/11/1986 | Male   | Engineer   | No    | TW18DZ   | 09876543210 | jk@jk.com | Email        | 2         | 3             | Daughter,Son,Wife | 20,18,45  | chrome  |

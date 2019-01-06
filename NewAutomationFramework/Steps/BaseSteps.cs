@@ -11,10 +11,26 @@ using System.Threading.Tasks;
 
 namespace NewAutomationFramework.Steps
 {
-   public class BaseSteps
+    public class BaseSteps
     {
-        private static IWebDriver driver;
+        public static IWebDriver driver;
 
+
+        public IWebDriver SetDriver(string browser)
+        {
+            switch (browser.ToLower())
+            {
+                case "chrome":
+                    driver = ChromeDriver();
+                    break;
+                case "firefox":
+                    driver = SetFirefoxDriver();
+                    break;
+                default:
+                    break;
+            }
+            return driver;
+        }
 
         public IWebDriver ChromeDriver()
         {

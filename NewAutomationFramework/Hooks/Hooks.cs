@@ -22,29 +22,29 @@ namespace NewAutomationFramework.Hooks
     {
         private static IWebDriver driver;
 
-        [BeforeScenario]
-        public void SetDriver()
-        {
-            string broswer = ConfigurationSettings.AppSettings["Browser"];
-            switch(broswer.ToLower())
-            {
-                case "chrome":
-                    driver = ChromeDriver();
-                    break;
+        //[BeforeScenario]
+        //public void SetDriver()
+        //{
+        //    string broswer = ConfigurationSettings.AppSettings["Browser"];
+        //    switch(broswer.ToLower())
+        //    {
+        //        case "chrome":
+        //            driver = ChromeDriver();
+        //            break;
 
-                case "firefox":
-                    driver = SetFirefoxDriver();
-                    break;
+        //        case "firefox":
+        //            driver = SetFirefoxDriver();
+        //            break;
 
-                case "ie":
-                    break;
+        //        case "ie":
+        //            break;
 
-                default:
-                    break;
-            }
+        //        default:
+        //            break;
+        //    }
 
-            ScenarioContext.Current["driver"] = driver;
-        }
+        //    ScenarioContext.Current["driver"] = driver;
+        //}
 
         [AfterScenario]
         public void CloseBrowser()
