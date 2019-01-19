@@ -36,6 +36,7 @@ namespace NewAutomationFramework.Steps
                 default:
                     break;
             }
+            ScenarioContext.Current["driver"] = driver;
         }
 
         [When(@"I click on Get a quote button")]

@@ -14,6 +14,8 @@ namespace NewAutomationFramework.Page
         readonly IWebDriver driver;
         bool isPageLoaded;
 
+        private static readonly log4net.ILog log =
+   log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
 
         [FindsBy(How = How.XPath, Using = "//a[contains(text(),'Bupa 2019')]")]
@@ -33,12 +35,12 @@ namespace NewAutomationFramework.Page
         {
             if(lnkBupa.Displayed)
             {
-                Console.WriteLine("Page is loaded correctly");
+                log.Info("Page is loaded correctly");
                 isPageLoaded = true;
             }
             else
             {
-                Console.WriteLine("Page is not loaded correctly");
+                log.Error("Page is not loaded correctly");
             }
             return isPageLoaded;
         }
@@ -51,11 +53,26 @@ namespace NewAutomationFramework.Page
         public bool GetQuoteButton()
         {
             bool result = false;
-            if(btngetQuote.Displayed)
+            log.Debug("Started verifing get quote button");
+            try
             {
-                btngetQuote.Click();
-                result = true;
-            }           
+                if (btngetQuote.Displayed)
+                {
+                    btngetQuote.Click();
+                    result = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                if(ex is NoSuchElementException)
+                {
+                    log.Error("Get quote button not found");
+                    log.Info("button found due to error" + ex.Message);
+                    throw ex;
+                }
+                
+            }
+                    
             return result;
         }
 
