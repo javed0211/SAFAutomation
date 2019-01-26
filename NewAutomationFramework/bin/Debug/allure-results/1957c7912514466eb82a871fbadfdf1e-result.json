@@ -1,0 +1,186 @@
+{
+  "uuid": "40eee14982b247e1b50c1cc85486c061",
+  "historyId": "Get A quote BUPA",
+  "fullName": "Get A quote BUPA",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "12"
+    },
+    {
+      "name": "host",
+      "value": "DESKTOP-418QSEA"
+    },
+    {
+      "name": "feature",
+      "value": "Happy Path Place an Order"
+    }
+  ],
+  "links": [],
+  "name": "Get A quote BUPA",
+  "status": "broken",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "The given key was not present in the dictionary.",
+    "trace": "System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at NewAutomationFramework.Hooks.Hooks.CloseBrowser() in C:\\Users\\javed\\Documents\\SAFAutomation\\NewAutomationFramework\\Hooks\\Hooks.cs:line 52\r\n   at lambda_method(Closure , IContextManager )\r\n   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration)\r\n   at Allure.SpecFlowPlugin.AllureBindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration)"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  I am on 'Bupa' page using 'chrome'",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1548490674211,
+      "stop": 1548490685513
+    },
+    {
+      "name": "When  I click on Get a quote button",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1548490685522,
+      "stop": 1548490685523
+    },
+    {
+      "name": "Then  I should see cover option overlay",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1548490685523,
+      "stop": 1548490685523
+    },
+    {
+      "name": "When  I select 'Health insurance'",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1548490685523,
+      "stop": 1548490685523
+    },
+    {
+      "name": "Then  I should see Pre-text condition overlay",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1548490685523,
+      "stop": 1548490685523
+    },
+    {
+      "name": "When  I 'accept' condition by clicking accept and continue button",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1548490685524,
+      "stop": 1548490685524
+    },
+    {
+      "name": "Then  I should see get a health quote page",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1548490685524,
+      "stop": 1548490685524
+    },
+    {
+      "name": "When  I enter personal details as 'Javed','Khan','Mr','02/11/1986','Male','Engineer','No'",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1548490685524,
+      "stop": 1548490685524
+    },
+    {
+      "name": "And  I enter contact details as 'TW18DZ','09876543210','jk@jk.com','Email','2'",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1548490685524,
+      "stop": 1548490685527
+    },
+    {
+      "name": "And  I select Additional family details as '3','Daughter,Son,Wife','20,18,45'",
+      "status": "skipped",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1548490685533,
+      "stop": 1548490685533
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1548490674201,
+  "stop": 1548490685593
+}
